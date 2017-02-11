@@ -33,6 +33,7 @@ public class MyAlgorithm implements Algorithm{
         
         Double [] userWeight = AgentPref.weigthExtract(1);
         System.out.println(userWeight[0]+","+userWeight[1]+","+userWeight[2]+","+userWeight[3]);
-        //List<Double> items = Item.getRoute();
+        List<Double> items = Item.getRoute();
+        System.out.println(items);
     }
 }
