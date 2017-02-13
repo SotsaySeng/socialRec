@@ -14,7 +14,8 @@ import java.util.List;
  * @author yyang
  */
 public class Item {
-    public static List<Double> getRoute (){
+    public static List<TravelRoute> getRoute (){
+    //read from CSV
     List<TravelRoute> routes = InputReader.readTravelRouteFromCSV();
     List<String>  items = new ArrayList<>();
     //Get travel time from route list
@@ -22,16 +23,42 @@ public class Item {
         for(TravelRoute travelTime : routes ){
             travelTimes.add(travelTime.getTravelTime());
         }
-    List<Double> norTravelTimes = itemNormalization(travelTimes);
+        
+    List<String> norTravelTimes = itemNormalization(travelTimes);
     //end with return norValue
-    
-    
-    return norTravelTimes;
-    
+    //Get travel cost from route list
+    List<String>  travelCosts = new ArrayList<String>();
+        for(TravelRoute travelCost : routes ){
+            travelCosts.add(travelCost.getTravelCost());
+        }
+    List<String> norTravelCosts = itemNormalization(travelCosts);
+    //end with return norValue
+    //Get delay from route list
+    List<String>  delays = new ArrayList<String>();
+        for(TravelRoute delay : routes ){
+            delays.add(delay.getDelay());
+        }
+    List<String> norDelays = itemNormalization(delays);
+    //end with return norValue
+    //Get walk time from route list
+    List<String>  walkTimes = new ArrayList<String>();
+        for(TravelRoute walkTime : routes ){
+            walkTimes.add(walkTime.getWalk());
+        }
+    List<String> norWalkTime = itemNormalization(walkTimes);
+    //create items list
+            for(int i =  0; i < travelTimes.size(); i++){
+                items.add(norTravelTimes.get(i);
+                items.add(norTravelCosts.get(i));
+                items.add(norDelays.get(i));
+                items.add(norWalkTime.get(i));
+            }
+   
+        return routes;
     }
     
-    public static List<Double> itemNormalization (List<String> itemColumn){
-        List<Double>  normalisedColumn = new ArrayList<>();
+    public static List<String> itemNormalization (List<String> itemColumn){
+        List<String>  normalisedColumn = new ArrayList<>();
         double max =Double.parseDouble(Collections.max(itemColumn));
         double min =Double.parseDouble(Collections.min(itemColumn));
           
@@ -39,7 +66,7 @@ public class Item {
                 {
                     double value = Double.parseDouble(itemColumn.get(i));
                     value= (5+1)-(1+(value-min)*(5-1)/(max-min));
-                    normalisedColumn.add(value);
+                    normalisedColumn.add(String.valueOf(value)));
                 }
          
         return normalisedColumn; //return items
