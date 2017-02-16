@@ -19,22 +19,23 @@ public class TradAlgorithm implements Algorithm{
     @Override
     public Map<UserAgent,List<Item>> run() {
         //implement traditional algorithm
-        List<TravelRoute> items = Item.getRoute();
-        List<String>  fastestRoutes = new ArrayList<>();
-        Map fastestRoutesMap = new HashMap();
-        for(int i=0 ;i< items.size();i++)
-                {
-                    //retrive from the constructor
-                    Double vId = Double.parseDouble(items.get(i).getId());
-                    Double vTravelTime = Double.parseDouble(items.get(i).getTravelTime());
-                    //calculate personal 
-                    Double fastestRoute = vTravelTime;
-                    //add to persoanl list and map with id
-                    fastestRoutes.add(String.valueOf(fastestRoute));
-                    fastestRoutesMap.put(vId, fastestRoute);
-                }
-                
-        //itemList.put(UserAgent,idUtilityValue);
-        return fastestRoutesMap;
-    }  
+//        List<TravelRoute> items = Item.getRoute();
+//        List<String>  fastestRoutes = new ArrayList<>();
+//        Map fastestRoutesMap = new HashMap();
+//        for(int i=0 ;i< items.size();i++)
+//                {
+//                    //retrive from the constructor
+//                    Double vId = Double.parseDouble(items.get(i).getId());
+//                    Double vTravelTime = Double.parseDouble(items.get(i).getTravelTime());
+//                    //calculate personal
+//                    Double fastestRoute = vTravelTime;
+//                    //add to persoanl list and map with id
+//                    fastestRoutes.add(String.valueOf(fastestRoute));
+//                    fastestRoutesMap.put(vId, fastestRoute);
+//                }
+//
+//        //itemList.put(UserAgent,idUtilityValue);
+//        return fastestRoutesMap;
+        return null;
+    }
 }
