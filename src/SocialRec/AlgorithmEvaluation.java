@@ -10,13 +10,14 @@ import java.util.Map;
 
 /**
  *
- * @author yyang
+ * @author SocialRec
  */
 public class AlgorithmEvaluation {
 
     public void evaluate(Map<UserAgent, List<Item>> trad, 
             Map<UserAgent, List<Item>> mine, 
             Map<UserAgent, List<Item>> metric) {
+        
 
     }
 }

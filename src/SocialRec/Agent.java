@@ -7,7 +7,7 @@ package SocialRec;
 
 /**
  *
- * @author yyang
+ * @author SocialRec
  */
 public class Agent {
     

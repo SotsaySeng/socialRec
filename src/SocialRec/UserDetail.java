@@ -7,22 +7,22 @@ package SocialRec;
 
 /**
  *
- * @author DV6
+ * @author SocialRec
  */
 public class UserDetail {
         private String id;
 	private String user_id;
-	private String delay_weight;
 	private String time_weight;
         private String cost_weight;
+        private String delay_weight;
 	private String walk_weight;
         
-        public UserDetail(String id, String user_id, String delay_weight,String time_weight, String cost_weight,String walk_weight) {
+        public UserDetail(String id, String user_id,String time_weight, String cost_weight,String delay_weight,String walk_weight) {
         this.id = id;
         this.user_id = user_id;
-        this.delay_weight = delay_weight;
         this.time_weight = time_weight;
         this.cost_weight = cost_weight;
+        this.delay_weight = delay_weight;
         this.walk_weight = walk_weight;
         }
 
@@ -38,12 +38,7 @@ public class UserDetail {
 	public void setUserId(String user_id) {
 		this.user_id = user_id;
 	}
-	public String getDelayWeight() {
-		return delay_weight;
-	}
-	public void setDelayWeight(String delay_weight) {
-		this.delay_weight = delay_weight;
-	}
+	
 	public String getTimeWeight() {
 		return time_weight;
 	}
@@ -56,6 +51,12 @@ public class UserDetail {
 	public void setCostWeight(String cost_weight) {
 		this.cost_weight = cost_weight;
 	}
+        public String getDelayWeight() {
+		return delay_weight;
+	}
+	public void setDelayWeight(String delay_weight) {
+		this.delay_weight = delay_weight;
+	}
         public String getWalkWeight() {
 		return walk_weight;
 	}
@@ -65,7 +66,7 @@ public class UserDetail {
 	
 	@Override
 	public String toString(){
-		return "\n"+getId()+","+getUserId()+","+getDelayWeight()+","+getTimeWeight()+","+getCostWeight()+","+getWalkWeight()+"";
+		return "\n"+getId()+","+getUserId()+","+getTimeWeight()+","+getCostWeight()+","+getDelayWeight()+","+getWalkWeight()+"";
 	}
    
 }

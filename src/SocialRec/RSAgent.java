@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author yyang
+ * @author SocialRec
  */
 public class RSAgent extends Agent{
     private Algorithm algorithm;//can be traditional or mine

@@ -16,12 +16,12 @@ import java.util.List;
 
 /**
  *
- * @author yyang
+ * @author SocialRec
  */
 public class InputReader {
     
     public static List<TravelRoute> readTravelRouteFromCSV() {
-        String csvFileRoute = "data/routeNor.csv";
+        String csvFileRoute = "data/route.csv";
         List<TravelRoute> routes = new ArrayList<>();
         Path pathToFile = Paths.get(csvFileRoute);
         try (BufferedReader br = Files.newBufferedReader(pathToFile,
@@ -94,12 +94,12 @@ public class InputReader {
         
         String id = metadata[0];
 	String user_id = metadata[1];
-        String cost_weight= metadata[2];
-        String time_weight=metadata[3];
+        String time_weight=metadata[2];
+        String cost_weight= metadata[3];
         String delay_weight= metadata[4];
 	String walk_weight= metadata[5];
 
         // create and return user of this metadata
-        return new UserDetail(id, user_id, cost_weight,time_weight,delay_weight,walk_weight);
+        return new UserDetail(id, user_id,time_weight,cost_weight,delay_weight,walk_weight);
     }
 }

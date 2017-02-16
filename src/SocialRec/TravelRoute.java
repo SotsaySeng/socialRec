@@ -7,7 +7,7 @@ package SocialRec;
 
 /**
  *
- * @author DV6
+ * @author SocialRec
  */
 public class TravelRoute {
         public String id;

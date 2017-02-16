@@ -12,12 +12,12 @@ import java.util.Map;
 
 /**
  *
- * @author yyang
+ * @author SocialRec
  */
 public class UserAgent extends Agent{
     private AgentPref pref;
    
-    public static Map userAgentSelection (Map recommendedItems) {
+    public static Map userAgentUtilityFunction (Map recommendedItems) {
         List<String>  utilityValues = new ArrayList<>();
         Map idPersoanlUtilityValue = new HashMap();
         

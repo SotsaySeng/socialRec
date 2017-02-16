@@ -11,12 +11,13 @@ import java.util.List;
 
 /**
  *
- * @author yyang
+ * @author SocialRec
  */
 public class Item {
-    public static List<TravelRoute> getRoute (){
+    public static List<String> getRoute (){
     //read from CSV
     List<TravelRoute> routes = InputReader.readTravelRouteFromCSV();
+    
     List<String>  items = new ArrayList<>();
     //Get travel time from route list
     List<String>  travelTimes = new ArrayList<String>();
@@ -48,13 +49,13 @@ public class Item {
     List<String> norWalkTime = itemNormalization(walkTimes);
     //create items list
             for(int i =  0; i < travelTimes.size(); i++){
-                items.add(norTravelTimes.get(i);
+                items.add(norTravelTimes.get(i));
                 items.add(norTravelCosts.get(i));
                 items.add(norDelays.get(i));
                 items.add(norWalkTime.get(i));
             }
-   
-        return routes;
+            
+        return items;
     }
     
     public static List<String> itemNormalization (List<String> itemColumn){
@@ -66,7 +67,7 @@ public class Item {
                 {
                     double value = Double.parseDouble(itemColumn.get(i));
                     value= (5+1)-(1+(value-min)*(5-1)/(max-min));
-                    normalisedColumn.add(String.valueOf(value)));
+                    normalisedColumn.add(String.valueOf(value));
                 }
          
         return normalisedColumn; //return items
