@@ -5,6 +5,8 @@
  */
 package SocialRec;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PriorityQueue;
-import org.apache.commons.math3.stat.correlation.SpearmansCorrelation;
+//import org.apache.commons.math3.stat.correlation.SpearmansCorrelation;
 
 /**
  *
@@ -28,7 +30,7 @@ public class MyAlgorithm implements Algorithm{
         return null;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws  Exception{
         /*Map<String,String> map = new HashMap<>();
         map.put("a", "b");
         map.put("b", "c");
@@ -47,7 +49,7 @@ public class MyAlgorithm implements Algorithm{
         Double wAccident = 0.25;
         Double wPollution = 0.25;
         Double wTrafficCon = 0.25;
-        List<String> items = Item.getRoute();
+        List<TravelRoute> items = Item.getRoute();
         List<Double>  utilityValues = new ArrayList<>();
         List<Double>  testFastest = new ArrayList<>();
         List<String>  utilitySocials = new ArrayList<>();
@@ -56,6 +58,13 @@ public class MyAlgorithm implements Algorithm{
         Map idUtilitySocial = new HashMap();
         Map totalUtilityWithId = new HashMap();
         Map ItemDetails = new HashMap();
+
+        PrintWriter pw = new PrintWriter(new FileWriter("abc.txt"));
+        for(TravelRoute r : items){
+            pw.println(r.toString());
+            pw.flush();
+        }
+        pw.close();
         
         /*for(int i=0 ;i< items.size();i++)
                 {
@@ -95,7 +104,16 @@ public class MyAlgorithm implements Algorithm{
                 }
 */
                 //rank
-                System.out.println(items);
+//                System.out.println(items);
+//                System.out.println();
+//                for(int i=0;i<items.size();++i){
+//                    System.out.print(items.get(i));
+//                    if((i+1) % 4==0){
+//                        System.out.println();
+//                    } else{
+//                        System.out.print(",");
+//                    }
+//                }
                 //System.out.println(utilityValues);
                 //System.out.println(totalUtilityList);
                 //System.out.println(testFastest);
