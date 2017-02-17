@@ -16,5 +16,5 @@ public class RSAgent extends Agent{
     
     private List<UserAgent> userAgents;
     
-    
+   
 }

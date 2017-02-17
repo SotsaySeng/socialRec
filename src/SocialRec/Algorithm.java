@@ -13,5 +13,10 @@ import java.util.Map;
  * @author yyang
  */
 public interface Algorithm {
+
+    /**
+     *
+     * @return
+     */
     public Map<UserAgent,List<Item>> run();
 }
