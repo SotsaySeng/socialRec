@@ -22,6 +22,7 @@ public class InputReader {
     
     public static List<TravelRoute> readTravelRouteFromCSV() {
         String csvFileRoute = "data/route.csv";
+        String csvFileRoutePeak = "data/routePeak.csv";
         List<TravelRoute> routes = new ArrayList<>();
         Path pathToFile = Paths.get(csvFileRoute);
         try (BufferedReader br = Files.newBufferedReader(pathToFile,
